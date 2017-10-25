@@ -1,4 +1,4 @@
-import { yearsSeconds } from './../js/yearsSeconds.js';
+import { age } from './../js/yearsSeconds.js';
 
 $(document).ready(function() {
   $("form#regularNumber").submit(function(event) {
