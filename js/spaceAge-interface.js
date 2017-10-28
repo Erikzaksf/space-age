@@ -1,12 +1,10 @@
-import { Age } from './../js/yearsSeconds.js';
-
 $(document).ready(function() {
-  $("form#regularNumber").submit(function(event) {
+  $("form#userAge").submit(function(event) {
     event.preventDefault();
-    var age = parseInt($("input#number").val());
-    var yearsSeconds = new YearSeconds();
-    var result = yearsSeconds.converter(numberInput);
-    $(".well").show();
-    $(".output").text(result);
+    let age = parseInt($("input#number").val());
+    let lifeExp = parseInt($("input#exp").val());
+    let span = new Age(age, lifeExp);
+    debugger
+    $("#output").append("<h2>${earth} Earth years!</h2>");
   });
 });

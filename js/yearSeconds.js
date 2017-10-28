@@ -1,12 +1,15 @@
 export class Age {
-  function YearSeconds(age) {
-    YearSeconds.prototype.converter = function(num) {
-      let age = "";
-      const secondsInYear = 31536000;
-      let result = age * secondsInYear;
-      const dobNum = Math.floor(dob);
-      this.current = Math.floor(Date.now());
-    }
-  }return result;
-  exports.yearsSecondsModule = YearSeconds;
-};
+  constructor(age, lifeExp){
+    this.lifeExp = lifeExp;
+    const dobNum = Math.floor(dob);
+    this.current = Math.floor(Date.now());
+    const dobArrary = age.split('-');
+    const dob = new Date([dobArrary[0], dobArrary[1], dobArrary[2]]);
+    this.diffInSeconds = (this.current - dobNum)
+  }
+
+  earth() {
+    return(this.diffInSeconds/315576000);
+  }
+
+}
