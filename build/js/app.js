@@ -36,6 +36,21 @@ var Age = exports.Age = function () {
     value: function venus(earth) {
       return earth / .62;
     }
+  }, {
+    key: 'mars',
+    value: function mars(earth) {
+      return earth / 1.88;
+    }
+  }, {
+    key: 'jupiter',
+    value: function jupiter(earth) {
+      return earth / 11.86;
+    }
+  }, {
+    key: 'lifeOnEarth',
+    value: function lifeOnEarth(earth) {
+      return this.lifeExp - earth;
+    }
   }]);
 
   return Age;
@@ -54,8 +69,11 @@ $(document).ready(function () {
     var years = new _age.Age(birthday, lifeExp);
     var it = birthday.split("-");
     var currentAge = years.earth();
-    debugger;
-    $("#output").append("<h2>Current time spent on Earth:  " + currentAge + "years<br> What about if you lived on Mercury:  " + years.mercury(currentAge) + "years<br> What about if you lived on Venus:  " + years.venus(currentAge) + "years</h2>");
+
+    $("#output").append("<h2>Current time spent on Earth:  " + currentAge + "years<br> What about if you lived on Mercury:  " + years.mercury(currentAge) + "years<br> What about if you lived on Venus:  " + years.venus(currentAge) + "years<br> What about if you lived on Mars:  " + years.mars(currentAge) + "years<br> What about if you lived on Jupitor:  " + years.jupiter(currentAge) + "years</h2> <p>Years left on Earth:" + years.lifeOnEarth(currentAge) + "<br>Years left on Mercury:" + years.mercury(lifeExp - currentAge) + "<br>Years left on Venus:" + years.venus(lifeExp - currentAge) + "<br>Years left on Mars:" + years.mars(lifeExp - currentAge) + "<br>Years left on Jupitor:" + years.jupiter(lifeExp - currentAge) + "</>");
+    if (currentAge > lifeExp) {
+      alert("You have lived past the expextancy you have entered! Good for you, here's to many more.");
+    }
   });
 });
 

@@ -19,4 +19,17 @@ export class Age {
   venus(earth) {
     return earth /.62
   }
+
+  mars(earth) {
+    return earth /1.88
+  }
+
+  jupiter(earth) {
+    return earth /11.86
+  }
+
+  lifeOnEarth(earth) {
+    return this.lifeExp - earth
+  }
+
 }
