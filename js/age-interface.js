@@ -9,6 +9,6 @@ $(document).ready(function() {
     let it = birthday.split("-")
     let currentAge = years.earth();
     debugger
-    $("#output").append(`<h2>Current time spent on Earth:  ${currentAge}years</h2><br><h2> What about if you lived on Mercury:  ${years.mercury(currentAge)}years`);
+    $("#output").append(`<h2>Current time spent on Earth:  ${currentAge}years<br> What about if you lived on Mercury:  ${years.mercury(currentAge)}years<br> What about if you lived on Venus:  ${years.venus(currentAge)}years</h2>`);
   });
 });

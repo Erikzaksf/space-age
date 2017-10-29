@@ -16,4 +16,7 @@ export class Age {
     return earth /.24
   }
 
+  venus(earth) {
+    return earth /.62
+  }
 }

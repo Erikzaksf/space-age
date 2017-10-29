@@ -31,6 +31,11 @@ var Age = exports.Age = function () {
     value: function mercury(earth) {
       return earth / .24;
     }
+  }, {
+    key: 'venus',
+    value: function venus(earth) {
+      return earth / .62;
+    }
   }]);
 
   return Age;
@@ -50,7 +55,7 @@ $(document).ready(function () {
     var it = birthday.split("-");
     var currentAge = years.earth();
     debugger;
-    $("#output").append("<h2>Current time spent on Earth:  " + currentAge + "years</h2><br><h2> What about if you lived on Mercury:  " + years.mercury(currentAge));
+    $("#output").append("<h2>Current time spent on Earth:  " + currentAge + "years<br> What about if you lived on Mercury:  " + years.mercury(currentAge) + "years<br> What about if you lived on Venus:  " + years.venus(currentAge) + "years</h2>");
   });
 });
 
